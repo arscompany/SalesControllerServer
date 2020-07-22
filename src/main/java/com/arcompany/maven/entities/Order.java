@@ -6,7 +6,9 @@
 package com.arcompany.maven.entities;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
+
 import java.util.Map;
 
 /**
@@ -16,11 +18,13 @@ import java.util.Map;
 public class Order implements Serializable {
     
     private Long id;
-    private Map<Product,Integer> productList;
+    private List<Product> productList;
+    private List<Integer> quantityList;
     private Date date;
     
-    public Order(Map<Product,Integer> productList, Date date){
+    public Order(List<Product> productList, List<Integer> quantityList, Date date){
         this.productList = productList;
+        this.quantityList = quantityList;
         this.date = date;
     }
 
@@ -32,12 +36,20 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public Map<Product, Integer> getProductList() {
+    public List<Product> getProductList() {
         return productList;
     }
 
-    public void setProductList(Map<Product, Integer> productList) {
+    public void setProductList(List<Product> productList) {
         this.productList = productList;
+    }
+
+    public List<Integer> getQuantityList() {
+        return quantityList;
+    }
+
+    public void setQuantityList(List<Integer> quantityList) {
+        this.quantityList = quantityList;
     }
 
     public Date getDate() {

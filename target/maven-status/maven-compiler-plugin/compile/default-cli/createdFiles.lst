@@ -1,13 +1,8 @@
-com\arcompany\maven\DBConnection\FactoryDB$1.class
 com\arcompany\maven\App.class
 com\arcompany\maven\DaoImpl\DaoImplOrder.class
 com\arcompany\maven\Dao\DaoProduct.class
 com\arcompany\maven\DaoImpl\DaoImplProduct.class
 com\arcompany\maven\Dao\GenericDao.class
-com\arcompany\maven\DBConnection\FactoryDB.class
-com\arcompany\maven\DBConnection\GenericDB.class
-com\arcompany\maven\DBConnection\TypeDB.class
 com\arcompany\maven\entities\Order.class
 com\arcompany\maven\Dao\DaoOrder.class
 com\arcompany\maven\entities\Product.class
-com\arcompany\maven\DBConnection\MySqlDB.class

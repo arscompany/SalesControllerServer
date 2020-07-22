@@ -6,11 +6,15 @@
 package com.arcompany.maven.Dao;
 
 import com.arcompany.maven.entities.Order;
+import java.util.List;
 
 /**
  *
  * @author Adriel Rosario
  */
 public interface DaoOrder extends GenericDao <Order,Long> {
+    
+    public void create(Order entity, String path);
+    public List<Order> findAll(String path);
     
 }
