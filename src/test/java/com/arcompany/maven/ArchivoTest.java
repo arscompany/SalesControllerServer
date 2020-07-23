@@ -9,9 +9,11 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 import junit.framework.Assert;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -38,19 +40,14 @@ public class ArchivoTest
         productList.add(pr1);
         quantityList.add(3);
         
-        //SE CREA EL DATE
-              
-        Date date = new Date();
-        
         //SE CREA LA ORDEN
-        Order ord1 = new Order(productList,quantityList,date);
+        Order ord1 = new Order(productList,quantityList);
         
         //SE CREA EL DAO
-        DaoImplOrder daoImplOrder = new DaoImplOrder();  
+        DaoImplOrder daoImplOrder = new DaoImplOrder("ArchivoDePrueba.txt");  
         
-        //SE GUARDA LA ORDEN EN EL ARCHIVO
-        String path = "ArchivoDePrueba.txt";       
-        daoImplOrder.create(ord1, path);
+        //SE GUARDA LA ORDEN EN EL ARCHIVO      
+        daoImplOrder.create(ord1);
         
         
         List<Order> expectedOrdersList = new ArrayList<Order>();
@@ -58,7 +55,7 @@ public class ArchivoTest
         
         try{
             List<Order> ordersList = new ArrayList<Order>();
-            FileInputStream fileIn = new FileInputStream(path);
+            FileInputStream fileIn = new FileInputStream("ArchivoDePrueba.txt");
             
             ObjectInputStream entrada = new ObjectInputStream(fileIn);
             ordersList = (List<Order>) entrada.readObject();
@@ -79,11 +76,11 @@ public class ArchivoTest
     @Test
     public void testFindAll(){
         
-        DaoImplOrder dao = new DaoImplOrder();
+        DaoImplOrder dao = new DaoImplOrder("ArchivoDePrueba.txt");
         
         List<Order> ordersList = new ArrayList<Order>();
         
-        ordersList = dao.findAll("ArchivoDePrueba.txt");
+        ordersList = dao.findAll();
         
         //SE CREA EL PRODUCTO
         Product pr1 = new Product("Producto1",25.0); 
@@ -94,12 +91,8 @@ public class ArchivoTest
         productList.add(pr1);
         quantityList.add(3);
         
-        //SE CREA EL DATE
-              
-        Date date = new Date();
-        
         //SE CREA LA ORDEN
-        Order ord1 = new Order(productList,quantityList,date);
+        Order ord1 = new Order(productList,quantityList);
         
         List<Order> expectedOrdersList = new ArrayList<Order>();
         expectedOrdersList.add(ord1);

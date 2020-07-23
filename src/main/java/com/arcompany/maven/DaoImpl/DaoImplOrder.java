@@ -24,10 +24,10 @@ import java.util.logging.Logger;
 public class DaoImplOrder implements DaoOrder {
     
     private List<Order> ordersList = new ArrayList<Order>();
-    //A
-    @Override
-    public void create(Order entity) {
-
+    private String path;
+    
+    public DaoImplOrder(String path){
+        this.path = path;
     }
 
     @Override
@@ -47,11 +47,11 @@ public class DaoImplOrder implements DaoOrder {
 
 
     @Override
-    public void create(Order entity, String path) {
+    public void create(Order entity) {
                 
         //LEER
         try{
-            FileInputStream fileIn = new FileInputStream(path);
+            FileInputStream fileIn = new FileInputStream(this.path);
             
             ObjectInputStream entrada = new ObjectInputStream(fileIn);
             this.ordersList = (List<Order>) entrada.readObject();
@@ -81,11 +81,11 @@ public class DaoImplOrder implements DaoOrder {
     }
 
     @Override
-    public List<Order> findAll(String path) {
+    public List<Order> findAll() {
         List<Order> ordersList = new ArrayList<Order>();
         
         try{
-            FileInputStream fileIn = new FileInputStream(path);
+            FileInputStream fileIn = new FileInputStream(this.path);
             ObjectInputStream entrada = new ObjectInputStream(fileIn);
             ordersList = (List<Order>) entrada.readObject();
             entrada.close();
@@ -95,11 +95,6 @@ public class DaoImplOrder implements DaoOrder {
         }
         
         return ordersList;
-    }
-
-    @Override
-    public List<Order> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -14,7 +14,5 @@ import java.util.List;
  */
 public interface DaoOrder extends GenericDao <Order,Long> {
     
-    public void create(Order entity, String path);
-    public List<Order> findAll(String path);
     
 }
