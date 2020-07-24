@@ -6,13 +6,9 @@
 package com.arcompany.maven.entities;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
-import java.util.Map;
 
 /**
  *
@@ -23,15 +19,12 @@ public class Order implements Serializable {
     private Long id;
     private List<Product> productList;
     private List<Integer> quantityList;
-    //private DateTimeFormatter dtf;
-    //private LocalDateTime currentDate;
+    Date date;
     
     public Order(List<Product> productList, List<Integer> quantityList){
         this.productList = productList;
         this.quantityList = quantityList;
-        //dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
-        //currentDate = LocalDateTime.now(); 
-        
+        this.date = new Date();      
     }
 
     public long getId() {
@@ -58,20 +51,13 @@ public class Order implements Serializable {
         this.quantityList = quantityList;
     }
 
-//    public DateTimeFormatter getDtf() {
-//        return dtf;
-//    }
-//
-//    public void setDtf(DateTimeFormatter dtf) {
-//        this.dtf = dtf;
-//    }
-//
-//    public LocalDateTime getCurrentDate() {
-//        return currentDate;
-//    }
-//
-//    public void setCurrentDate(LocalDateTime currentDate) {
-//        this.currentDate = currentDate;
-//    }
-     
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    
 }
