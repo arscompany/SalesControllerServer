@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcompany.maven.controllers.ServerController">
+   <children>
+      <LineChart layoutX="100.0" layoutY="507.0" prefHeight="480.0" prefWidth="1600.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <CheckBox layoutX="1763.0" layoutY="507.0" mnemonicParsing="false" text="P1" />
+      <CheckBox layoutX="1763.0" layoutY="747.0" mnemonicParsing="false" text="P4" />
+      <CheckBox layoutX="1763.0" layoutY="667.0" mnemonicParsing="false" text="P3" />
+      <CheckBox layoutX="1763.0" layoutY="587.0" mnemonicParsing="false" text="P2" />
+      <CheckBox layoutX="1763.0" layoutY="907.0" mnemonicParsing="false" text="P6" />
+      <CheckBox layoutX="1763.0" layoutY="827.0" mnemonicParsing="false" text="P5" />
+      <Button layoutX="100.0" layoutY="25.0" mnemonicParsing="false" onAction="#refresh" text="refresh" />
+      <TableView fx:id="dataTable" layoutX="150.0" layoutY="75.0" prefHeight="400.0" prefWidth="1600.0">
+        <columns>
+          <TableColumn fx:id="orderColumn" prefWidth="266.0" text="Order" />
+          <TableColumn fx:id="productColumn" prefWidth="400.0" text="Product" />
+            <TableColumn fx:id="dateColumn" prefWidth="400.0" text="Date" />
+            <TableColumn fx:id="quantityColumn" prefWidth="266.0" text="Quantity" />
+            <TableColumn fx:id="incomeColumn" prefWidth="266.0" text="Income" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -2,7 +2,9 @@ C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\mai
 C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\DaoImpl\DaoImplOrder.java
 C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\App.java
 C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\Dao\GenericDao.java
+C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\Server.java
 C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\Dao\DaoProduct.java
-C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\entities\Product.java
 C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\Dao\DaoOrder.java
-C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\entities\Order.java
+C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\controllers\ServerController.java
+C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\controllers\Registry.java
+C:\Users\Adriel Rosario\Documents\NetBeansProjects\salesControllerServer\src\main\java\com\arcompany\maven\controllers\ServerControllerEliminado.java

@@ -68,6 +68,20 @@ public class DaoImplOrder implements DaoOrder {
             FileOutputStream fileOut = new FileOutputStream(path);
             
             ObjectOutputStream salida = new ObjectOutputStream(fileOut);
+            
+            //AGREGAR EL ID AL PEDIDO
+            try{
+                int idInt = this.findAll().size();
+                Long idLong = new Long(idInt);
+                entity.setId(idLong);
+                System.out.println("try");
+            }catch(Exception e){
+                entity.setId(1L);
+                System.out.println("catch");
+            }
+            
+            
+            
             this.ordersList.add(entity);
             salida.writeObject(ordersList);
             this.ordersList.clear();
@@ -96,5 +110,23 @@ public class DaoImplOrder implements DaoOrder {
         
         return ordersList;
     }
+
+    public List<Order> getOrdersList() {
+        return ordersList;
+    }
+
+    public void setOrdersList(List<Order> ordersList) {
+        this.ordersList = ordersList;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+    
+    
     
 }
